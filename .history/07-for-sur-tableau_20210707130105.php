@@ -9,5 +9,5 @@ $numberOfCountries = count($tab_pays);
 echo "<p>Il y a $numberOfCountries".' pays dans le tabeau $tab_pays</p>';
 
 for ($n=0;$n<$numberOfCountries;$n++){
-    echo "<p>".($n+1)."$tab_pays[$n]"."</p>";
+    echo "<p>".$n+1."$tab_pays[$n]</p>";
 }
