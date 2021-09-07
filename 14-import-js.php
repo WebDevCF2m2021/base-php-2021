@@ -1,16 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 
 $takeMeteo = file_get_contents("https://prevision-meteo.ch/services/json/bruxelles-1",);
 
-$jsonMeteo = json_decode($takeMeteo,true), function ($key) {
+$jsonMeteo = array_filter(json_decode($takeMeteo, true), function ($key) {
     return strpos($key, 'fcst_day_') === 0;
 }, ARRAY_FILTER_USE_KEY);
 
 // var_dump($jsonMeteo);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
