@@ -5,14 +5,11 @@
 // Importation du contenu d'un fichier externe au format json
 $takeMeteo = file_get_contents("https://prevision-meteo.ch/services/json/bruxelles-1",);
 
-<<<<<<< HEAD
 $jsonMeteo = array_filter(json_decode($takeMeteo, true), function ($key) {
     return strpos($key, 'fcst_day_') === 0;
 }, ARRAY_FILTER_USE_KEY);
-=======
 // Transformation du format json en tableau associatif
 $jsonMeteo = json_decode($takeMeteo,true);
->>>>>>> 7fd9147317a60a4807717a91a3bd920d4b7f2ed2
 
 // var_dump($jsonMeteo);
 ?>
