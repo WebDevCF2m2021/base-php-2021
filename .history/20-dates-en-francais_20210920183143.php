@@ -30,35 +30,31 @@ function frenchDate($date,$format=1){
 
     // transformation de la date en Timestamp (secondes depuis le 1/1/1970 )
     $date = strtotime($date);
-    switch($format){
-        case 1:
-            $out.="Le "
-            .$joursTab[date("w",$date)]." "
-            .date("d",$date)." " 
-            .$moisTab[date("n",$date)]." "
-            .date("Y à H:i",$date);
-        break;
-        case 2:
-            $out.="Le "
-            .date("d",$date)." " 
-            .$moisTab[date("n",$date)]." "
-            .date("Y à H\hi",$date);
-        break;
-        case 3:
-            $out.="Le "
-            .$joursTab[date("w",$date)]." "
-            .date("d",$date)." " 
-            .$moisTab[date("n",$date)]." "
-            .date("Y",$date);
-            if(intval(date("H",$date))>1){
-                $out.=date(" à G",$date)." heures";
-            }else{
-                $out.=date(" à G",$date)." heure";
-            }
-        break;
-        default:
+    // A transformer en switch
+    if($format===1){
+        $out.="Le "
+                .$joursTab[date("w",$date)]." " // jour de la semaine en français
+                .date("d",$date)." " // chiffre du jour
+                .$moisTab[date("n",$date)]." " // mois en français
+                .date("Y à H:i",$date); // année / heures / minutes
+    }elseif($format===2){
+        $out.="Le "
+        .date("d",$date)." " // chiffre du jour
+        .$moisTab[date("n",$date)]." " // mois en français
+        .date("Y à H\hi",$date); // année / heures / minutes
+    }elseif($format===3){
+        $out.="Le "
+        .$joursTab[date("w",$date)]." " // jour de la semaine en français
+        .date("d",$date)." " // chiffre du jour
+        .$moisTab[date("n",$date)]." " // mois en français
+        .date("Y",$date); // année / heures / minutes
+        if(intval(date("H",$date))>1){
+            $out.=date("à H heures");
+        };
+/*         if(date("Y",$date)){}else{} */
+    }else{
          return "Format de date non reconnue";   
-        }
+    }
     return $out;
 }
 

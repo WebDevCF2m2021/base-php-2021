@@ -30,20 +30,21 @@ function frenchDate($date,$format=1){
 
     // transformation de la date en Timestamp (secondes depuis le 1/1/1970 )
     $date = strtotime($date);
+    // A transformer en switch
     switch($format){
         case 1:
             $out.="Le "
-            .$joursTab[date("w",$date)]." "
-            .date("d",$date)." " 
-            .$moisTab[date("n",$date)]." "
-            .date("Y à H:i",$date);
-        break;
-        case 2:
-            $out.="Le "
+                .$joursTab[date("w",$date)]." "
+                .date("d",$date)." " 
+                .$moisTab[date("n",$date)]." "
+                .date("Y à H:i",$date);
+            break;
+            case 2:
+        $out.="Le "
             .date("d",$date)." " 
             .$moisTab[date("n",$date)]." "
             .date("Y à H\hi",$date);
-        break;
+            break;
         case 3:
             $out.="Le "
             .$joursTab[date("w",$date)]." "
@@ -55,7 +56,8 @@ function frenchDate($date,$format=1){
             }else{
                 $out.=date(" à G",$date)." heure";
             }
-        break;
+            break;
+/*         if(date("Y",$date)){}else{} */
         default:
          return "Format de date non reconnue";   
         }
