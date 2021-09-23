@@ -1,4 +1,15 @@
 <?php
+
+/*
+EXE 3 remplacer les conditions strictes par les simplifiées
+Lignes  21
+Lignes  43
+Lignes  88 -> utilisation de empty()
+
+       
+*/
+
+
 // chargement du fichier de configuration, le require_once ne permet pas l'erreur (exit immédiat) et surtout ne charge le fichier qu'une seule fois !!! (sinon erreur des constantes redéfinies)
 require_once "config.php";
 
@@ -29,7 +40,7 @@ $requestDB = mysqli_query($connectDB, $sql) or die("Problème lors de la requêt
 $nbMessage = mysqli_num_rows($requestDB);
 
 // si on a au moins un message (0=> false, 1 ou plus => true)
-if($nbMessage){
+if($nbMessage==true){
     // si on a un message OU plusieurs messages, on va toujours utiliser les mysqli_fetch_all avec le flag: MYSQLI_ASSOC
     $messages = mysqli_fetch_all($requestDB,MYSQLI_ASSOC);
 }
@@ -102,13 +113,23 @@ if($nbMessage){
     </main>
     <nav>
         <?php
+
+        /*
+        EXERCICE
+         Si j'ai plus que 4 messages
+            on affiche le menu
+         Sinon
+            on ne l'affiche pas   
+         */
+
         // on importe le fichier contenant le menu, autant de fois qu'on le souhaite, et permet l'erreur (affichage du reste de la page)
         include "menu.php";
 
         ?>
     </nav>
     <footer>
-        <p>Réalisé par Pierre, dans le cadre de la formation Web Développeur du CF2m</p>
+        <!-- EXE 2 année en 4 chiffres, qui change suivant l'année -->
+        <p>Réalisé par Pierre, dans le cadre de la formation Web Développeur du ©CF2m - 2021 </p>
     </footer>
 </body>
 
