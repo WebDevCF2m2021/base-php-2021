@@ -102,6 +102,7 @@ include_once("./helper.php");
                 <div><?=$item['msg']?></div>
                 <!-- date et heure de création du message -->
                 <p>Ecrit <?=strtolower(frenchDate($item['date_msg']))?></p>
+                
             </article>
             <?php
             endforeach;
