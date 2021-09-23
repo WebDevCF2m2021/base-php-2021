@@ -7,3 +7,4 @@ define("DB_PORT",3307);
 define("DB_USER","root");
 define("DB_PWD","");
 define("DB_CHARSET","utf8");
+define("DATE",date("Y-m-d H:i:s"));

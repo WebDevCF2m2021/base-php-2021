@@ -44,7 +44,7 @@ if($nbMessage){
     // si on a un message OU plusieurs messages, on va toujours utiliser les mysqli_fetch_all avec le flag: MYSQLI_ASSOC
     $messages = mysqli_fetch_all($requestDB,MYSQLI_ASSOC);
 }
-include_once("./helper.php");
+include("./helper.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -101,7 +101,7 @@ include_once("./helper.php");
                 <!-- div avec le contenu du message -->
                 <div><?=$item['msg']?></div>
                 <!-- date et heure de création du message -->
-                <p>Ecrit <?=$item['date_msg']?></p>
+                <p>Ecrit le <?=$item['date_msg']?></p>
             </article>
             <?php
             endforeach;
@@ -130,7 +130,7 @@ include_once("./helper.php");
     </nav>
     <footer>
         <!-- EXE 2 année en 4 chiffres, qui change suivant l'année -->
-        <p>Réalisé par Pierre, dans le cadre de la formation Web Développeur du ©CF2m - <?=date("Y")?> </p>
+        <p>Réalisé par Pierre, dans le cadre de la formation Web Développeur du ©CF2m - <?=frenchDate(DATE)?> </p>
     </footer>
 </body>
 

@@ -101,7 +101,7 @@ include_once("./helper.php");
                 <!-- div avec le contenu du message -->
                 <div><?=$item['msg']?></div>
                 <!-- date et heure de création du message -->
-                <p>Ecrit <?=$item['date_msg']?></p>
+                <p>Ecrit le <?=$item['date_msg']?></p>
             </article>
             <?php
             endforeach;
