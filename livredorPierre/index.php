@@ -44,7 +44,7 @@ if($nbMessage){
     // si on a un message OU plusieurs messages, on va toujours utiliser les mysqli_fetch_all avec le flag: MYSQLI_ASSOC
     $messages = mysqli_fetch_all($requestDB,MYSQLI_ASSOC);
 }
-
+include("./helper.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -130,7 +130,7 @@ if($nbMessage){
     </nav>
     <footer>
         <!-- EXE 2 année en 4 chiffres, qui change suivant l'année -->
-        <p>Réalisé par Pierre, dans le cadre de la formation Web Développeur du ©CF2m - <?=date("Y")?> </p>
+        <p>Réalisé par Pierre, dans le cadre de la formation Web Développeur du ©CF2m - <?=frenchDate(DATE)?> </p>
     </footer>
 </body>
 
