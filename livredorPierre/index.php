@@ -6,7 +6,7 @@ Lignes  21
 Lignes  43
 Lignes  82 -> utilisation de empty()
 
-       
+
 */
 
 
@@ -113,7 +113,7 @@ if($nbMessage){
     </main>
     <nav>
         <?php
-
+       
         /*
         EXERCICE
          Si j'ai plus que 4 messages
@@ -121,11 +121,11 @@ if($nbMessage){
          Sinon
             on ne l'affiche pas   
 
-         */
+            */
 
         if($nbMessage>4){ 
         // on importe le fichier contenant le menu, autant de fois qu'on le souhaite, et permet l'erreur (affichage du reste de la page)
-            include "menu.php";
+        include "menu.php";
         }
 
         ?>
