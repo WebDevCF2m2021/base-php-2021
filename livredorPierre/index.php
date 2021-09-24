@@ -114,7 +114,7 @@ include_once("./helper.php");
     </main>
     <nav>
         <?php
-        /*Bonjour, ceci est un test pour le token*/
+        /*Bonjour, ceci est un test pour le token, je retest?*/
         /*
         EXERCICE
          Si j'ai plus que 4 messages
