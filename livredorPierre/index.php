@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 /*
 EXE 3 remplacer les conditions strictes par les simplifiées
 Lignes  21
@@ -10,8 +9,6 @@ Lignes  82 -> utilisation de empty()
 
 */
 
-=======
->>>>>>> 382cda7997887d598443e30876d96ce234badf20
 
 // chargement du fichier de configuration, le require_once ne permet pas l'erreur (exit immédiat) et surtout ne charge le fichier qu'une seule fois !!! (sinon erreur des constantes redéfinies)
 require_once "config.php";
@@ -117,7 +114,6 @@ if($nbMessage){
     </main>
     <nav>
         <?php
-<<<<<<< HEAD
        
         /*
         EXERCICE
@@ -131,13 +127,6 @@ if($nbMessage){
         if($nbMessage>4){ 
         // on importe le fichier contenant le menu, autant de fois qu'on le souhaite, et permet l'erreur (affichage du reste de la page)
         include "menu.php";
-=======
-
-        // si on a plus de 4 messages
-        if($nbMessage>4){ 
-        // on importe le fichier contenant le menu en bas de page
-            include "menu.php";
->>>>>>> 382cda7997887d598443e30876d96ce234badf20
         }
 
         ?>
