@@ -2,7 +2,7 @@
 
 Bases de PHP 7.4 et 8
 
-## Windowss
+## Windowsss
 
 Pour installer Wamp sous Windows, suivez le lien ci-dessous:
 https://wampserver.aviatechno.net/?lang=french
