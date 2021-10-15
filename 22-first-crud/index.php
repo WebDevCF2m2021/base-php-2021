@@ -8,6 +8,9 @@ Toutes les pages publiques sont appelées par celle-ci (1 entrée = 1 sortie)
 // Chargement des dépendances (si faute erreur fatale, arrêt du script, ne peut être chargé qu'une X)
 require_once("config.php");
 
+// nos fonctions
+require_once("functions.php");
+
 
 
 // Connexion en mysqli à notre base de donnée (désactivation du warning avec le @)
@@ -18,6 +21,9 @@ if(!$db){ // ($db==false)
     // arrêt du script, et affichage du message d'erreur personnalisé avec mysqli_connect_error() (utf8_encode sert à voir les accents en français)
     die("Erreur de connexion : ".utf8_encode(mysqli_connect_error()));
 }
+
+// on indique à notre connexion qu'on va conversé entre PHP et MySQL en UTF-8
+mysqli_set_charset($db,MDB_CHARSET);
 
 /*
 Création du routeur vers les pages se trouvant dans 'public_page'
