@@ -15,6 +15,13 @@ if(isset($_GET['id'])&&ctype_digit($_GET['id'])&&!empty($_GET['id'])){
 
         $request = mysqli_query($db,$sql) or die("Erreur de Select : ".mysqli_error($db));
 
+            // On va vérifier si on trouve 1 article Possibilité 1 ou 0 article.
+
+            if(mysqli_num_rows($request)){ // On a un article (1 == true)
+
+            }else{
+                
+            }
 
 // pas de variable id    
 }else{
