@@ -13,6 +13,8 @@ if(isset($_GET['id'])&&ctype_digit($_GET['id'])&&!empty($_GET['id'])){
             ON u.idtheuser = a.theuser_idtheuser
             WHERE a.idthearticle = $idarticle ;";
 
+        $request = mysqli_query($db,$sql) or die("Erreur de Select : ".mysqli_error($db));
+
 
 // pas de variable id    
 }else{
