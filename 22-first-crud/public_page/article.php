@@ -5,15 +5,20 @@ if(isset($_GET['id'])&&ctype_digit($_GET['id'])&&!empty($_GET['id'])){
     // transtypage de string to int
     $idarticle = (int) $_GET['id'];
 
-    // requête dans une variable
+
+    // requête dans une variable entre double guillemet.
         $sql="SELECT a.idthearticle, a.thearticletitle, a.thearticletext, a.thearticledate,
             u.idtheuser, u.theuserlogin
             FROM thearticle a
             INNER JOIN  theuser u 
             ON u.idtheuser = a.theuser_idtheuser
             WHERE a.idthearticle = $idarticle ;";
+=======
+    // requête dans une variable
+    // exécution de la requête
+  
 
-        $request = mysqli_query($db,$sql) or die("Erreur de Select : ".mysqli_error($db));
+     $request = mysqli_query($db,$sql) or die("Erreur de Select : ".mysqli_error($db));
 
             // On va vérifier si on trouve 1 article Possibilité 1 ou 0 article.
 
