@@ -1,6 +1,6 @@
 <?php
 /*
-Page d'accueil, doit passer par index.php (hé oui!) (CF)
+Page d'accueil, doit passer par index.php (CF)
 */
 
 // on va récupérer tous les articles avec le texte à maximum 220 caractères, avec l'utilisateur qui l'a écrit (voir datas/crud01-requests-test.sql)
