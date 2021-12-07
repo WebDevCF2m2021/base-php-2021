@@ -1,4 +1,5 @@
 <?php
+
 // pour l'envoi d'un mail
 
 // SMTP (protocole d'envoi de mail - Simple Mail Transfer Protocol)
