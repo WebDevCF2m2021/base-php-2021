@@ -3,6 +3,14 @@
 // création ou continuation d'une session
 session_start();
 
+// si on est connecté (et que la connexion est toujours valide)
+if (isset($_SESSION['myId']) && $_SESSION['myId'] == session_id()) {
+    // on veut se connecter en étant déjà connecté, alors autant se déconnecter avant !
+    header("location: deconnexion.php");
+} else {
+    $connect = false;
+}
+
 // création des utilisateurs et leurs persmissions
 $login = ['admin', 'modo', 'redac'];
 $pwd = ['123', '456', '789'];
@@ -47,15 +55,9 @@ if (isset($_POST['login'], $_POST['password']) && !empty($_POST['login']) && !em
 </head>
 
 <body>
-    <ul>
-        <li><a href="./">Accueil</a></li>
-        <li><a href="admin.php">Admin</a></li>
-        <li><a href="modo.php">Modo</a></li>
-        <li><a href="redac.php">Rédacteur</a></li>
-        <li><a href="tous.php">Tous</a></li>
-        <li><a href="connexion.php">Connexion</a></li>
-        <li><a href="deconnexion.php">Déconnexion</a></li>
-    </ul>
+    <?php
+    include "menu.php";
+    ?>
     <h1>Connexion</h1>
     <?php if (isset($error)) echo "<h3>$error</h3>" ?>
     <form name="lulu" action="" method="post">

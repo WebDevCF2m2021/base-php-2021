@@ -1,6 +1,13 @@
 <?php
 // création ou continuation d'une session
 session_start();
+
+// si on est connecté (et que la connexion est toujours valide)
+if (isset($_SESSION['myId']) && $_SESSION['myId'] == session_id()) {
+    $connect = true;
+} else {
+    header("Location: ./");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,17 +20,12 @@ session_start();
 </head>
 
 <body>
-    <ul>
-        <li><a href="./">Accueil</a></li>
-        <li><a href="admin.php">Admin</a></li>
-        <li><a href="modo.php">Modo</a></li>
-        <li><a href="redac.php">Rédacteur</a></li>
-        <li><a href="tous.php">Tous</a></li>
-        <li><a href="connexion.php">Connexion</a></li>
-        <li><a href="deconnexion.php">Déconnexion</a></li>
-    </ul>
+    <?php
+    include "menu.php";
+    ?>
     <h1>Rédacteur</h1>
-    <h2>Permissions</h2>
+    <h2>Permissions aux admins (0), modérateurs (1) et rédacteurs (2)</h2>
+    <pre><?php print_r($_SESSION) ?></pre>
     <h3>Admin</h3>
     <p>Peut naviguer sur ces pages :</p>
     <ul>

@@ -1,6 +1,19 @@
 <?php
 // création ou continuation d'une session
 session_start();
+
+// si on est connecté (et que la connexion est toujours valide)
+if (isset($_SESSION['myId']) && $_SESSION['myId'] == session_id()) {
+    $connect = true;
+    // si l'utilisateur n'a pas le droit admin (0)
+    //var_dump($_SESSION);
+    if ($_SESSION['droit'] != 0) {
+        header("Location: ./");
+    }
+} else {
+    // pas connecté, on va sur index.php
+    header("Location: ./");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,17 +26,12 @@ session_start();
 </head>
 
 <body>
-    <ul>
-        <li><a href="./">Accueil</a></li>
-        <li><a href="admin.php">Admin</a></li>
-        <li><a href="modo.php">Modo</a></li>
-        <li><a href="redac.php">Rédacteur</a></li>
-        <li><a href="tous.php">Tous</a></li>
-        <li><a href="connexion.php">Connexion</a></li>
-        <li><a href="deconnexion.php">Déconnexion</a></li>
-    </ul>
+    <?php
+    include "menu.php";
+    ?>
     <h1>Admin</h1>
-    <h2>Permissions</h2>
+    <h2>Permissions seulement aux admin (droit 0)</h2>
+    <pre><?php print_r($_SESSION) ?></pre>
     <h3>Admin</h3>
     <p>Peut naviguer sur ces pages :</p>
     <ul>
