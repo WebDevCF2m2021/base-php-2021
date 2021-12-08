@@ -19,7 +19,7 @@ if (isset($_SESSION["id"]) && $_SESSION["id"] !== session_id()) {
     <?php
     include "./menu.php";
     ?>
-    <h1>Accueil</h1>
+    <h1>Accueil<?= isset($_SESSION["login"]) ? " | Bienvenue " . $_SESSION["login"] . "!" : "" ?></h1>
     <pre>
         <?php
         print_r($_SESSION);

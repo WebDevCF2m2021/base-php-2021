@@ -10,14 +10,14 @@
     ?>
                 <li><a href="1.php">Page 1</a></li>
             <?php
-            } else {
-            ?>
-                <li><a href="2.php">Page 2</a></li>
-                <li><a href="3.php">Page 3</a></li>
-            <?php
             }
-        } elseif ($_SESSION["right"] === 1) {
             ?>
+            <li><a href="2.php">Page 2</a></li>
+            <li><a href="3.php">Page 3</a></li>
+        <?php
+
+        } elseif ($_SESSION["right"] === 1) {
+        ?>
             <li><a href="4.php">Page 4</a></li>
         <?php
         }

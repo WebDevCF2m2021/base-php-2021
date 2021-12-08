@@ -8,7 +8,7 @@ if (isset($_POST["login"]) && isset($_POST["pwd"]) && $_POST["login"] && $_POST[
     if (in_array($_POST["login"], $logins) && $pwds[array_search($_POST["login"], $logins) !== false ? array_search($_POST["login"], $logins) : die()] === $_POST["pwd"]) {
         $_SESSION["id"] = session_id();
         $_SESSION["login"] = $_POST["login"];
-        $_SESSION["right"] = $perm[array_search($_POST["login"], $login)];
+        $_SESSION["right"] = $perm[array_search($_POST["login"], $logins)];
         header("Location: ./");
     }
 }
